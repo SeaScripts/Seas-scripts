@@ -1,0 +1,28 @@
+-- auto fruit
+-- Script de exemplo para coleta automática de frutas
+-- Use por sua conta e risco. Não sou responsável por quaisquer consequências.
+
+local player = game.Players.LocalPlayer
+local character = player.Character
+local humanoid = character:WaitForChild("Humanoid")
+local tool = character:FindFirstChildOfClass("Tool")
+
+-- Função para mover o jogador para a posição da fruta
+local function moveToFruit(fruitPosition)
+    humanoid:MoveTo(fruitPosition)
+end
+
+-- Função para coletar a fruta
+local function collectFruit()
+    if tool then
+        tool:Activate()
+    end
+end
+
+-- Exemplo de uma fruta em uma determinada posição
+local fruitPosition = Vector3.new(100, 0, 100)
+
+-- Move o jogador para a posição da fruta e coleta
+moveToFruit(fruitPosition)
+wait(2)
+collectFruit()
